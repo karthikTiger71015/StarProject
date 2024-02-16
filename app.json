@@ -1,0 +1,24 @@
+{
+  "sourceForRawZone":{
+    "source_bucket":"karthikkumar-landingbucket-batch01",
+    "destination_bucket":"karthikkumar-rawbucket-batch01",
+    "source_folder_key":"datasource/",
+    "destination_folder_key":""
+
+  },
+  "source": [
+    "s3://karthikkumar-rawbucket-batch01/actives.parquet",
+    "s3://karthikkumar-rawbucket-batch01/viewership.parquet"
+  ],
+  "destination": "s3://karthikkumar-staggingbucket-batch01/outputFolder/",
+  "transformations": {
+    "advertising_id": "sha2",
+    "user_id": "sha2",
+    "user_longitude": "convert to decimal with 7 precision",
+    "user_latitude": "convert to decimal with 7 precision",
+    "user_lat":"convert to decimal with 7 precision",
+    "user_long":"convert to decimal with 7 precision",
+    "location_source": "Convert to a comma-separated string"
+  },
+  "partitions":["month","date"]
+}
