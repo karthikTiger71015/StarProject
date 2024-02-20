@@ -53,7 +53,7 @@ for source_bucket in source:
                 df = df.withColumn(name, sha2(col(column), 256))
             elif "convert to decimal with" in transformation:
                 precision = int(transformation.split(" ")[-2])
-                df = df.withColumn(column, round(col(column).cast("decimal(10," + str(precision) + ")"), precision))
+                df = df.withColumn(column, round(col(column).cast(f"decimal(10,{precision})"), precision))
             elif transformation == "Convert to a comma-separated string":
                 df = df.withColumn(column, concat_ws(",", col(column)))
 
