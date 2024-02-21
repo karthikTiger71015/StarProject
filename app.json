@@ -11,11 +11,16 @@
     "s3://karthikkumar-rawbucket-batch01/viewership.parquet"
   ],
   "destination": "s3://karthikkumar-staggingbucket-batch01/outputFolder/",
-  "transformations": {
+  "actives_transformations": {
     "advertising_id": "sha2",
     "user_id": "sha2",
     "user_longitude": "convert to decimal with 7 precision",
     "user_latitude": "convert to decimal with 7 precision",
+    "location_source": "Convert to a comma-separated string"
+  },
+  "viewers_transformations": {
+    "advertising_id": "sha2",
+    "user_id": "sha2",
     "user_lat":"convert to decimal with 7 precision",
     "user_long":"convert to decimal with 7 precision",
     "location_source": "Convert to a comma-separated string"

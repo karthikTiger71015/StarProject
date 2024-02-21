@@ -25,7 +25,10 @@ config_df = spark.read.json(config_file_path, multiLine=True)
 
 # Extract configuration values
 destination = config_df.select("destination").head()[0]
-transformations = config_df.select("transformations").first()[0].asDict()
+text = source_path.split('/')[-1].split('.')[-2]
+print(text)
+transformation_text = text+"_transformations"
+transformations = config_df.select(transformation_text).first()[0].asDict()
 # source = config_df.select("source").first()[0]
 source=[]
 source.append(source_path)
