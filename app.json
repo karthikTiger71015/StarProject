@@ -20,7 +20,6 @@
   },
   "viewership_transformations": {
     "advertising_id": "sha2",
-    "user_id": "sha2",
     "user_lat":"convert to decimal with 7 precision",
     "user_long":"convert to decimal with 7 precision",
     "location_source": "Convert to a comma-separated string"
